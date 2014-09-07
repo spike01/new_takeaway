@@ -1,4 +1,4 @@
-require 'twilio'
+require_relative './twilio'
 
 class Takeaway
 
@@ -24,7 +24,7 @@ class Takeaway
   end
 
   def check_order?(order)
-    order.total == order.items.inject {|x,y| x.price + y.price}
+    order.total == order.list.inject(0) {|x,y| x + y.price}
   end
 
 end

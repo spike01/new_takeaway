@@ -12,7 +12,7 @@ class Order
   end
 
   def total
-    list.inject { |x, y| x.price + y.price }
+    list.inject(0) { |x, y| x + y.price }
   end
 
 end

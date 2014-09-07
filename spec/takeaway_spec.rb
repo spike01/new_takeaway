@@ -7,8 +7,8 @@ describe Takeaway do
   let(:menu)         { double :menu, display: [:menu_item_1, :menu_item_2] }
   let(:beer)         { double :beer, price: 2.0 }
   let(:cider)        { double :cider, price: 1.0 }
-  let(:order)        { double :order, total: 3.0, items: [beer, cider] }
-  let(:bad_order)    { double :order, total: 5.0, items: [beer, cider] }
+  let(:order)        { double :order, total: 3.0, list: [beer, cider] }
+  let(:bad_order)    { double :order, total: 5.0, list: [beer, cider] }
 
   it "must initialize with a name" do
     expect(Takeaway.new("Ultimate Fried Mars Bar").name).to eq("Ultimate Fried Mars Bar")
