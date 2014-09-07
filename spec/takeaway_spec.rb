@@ -31,8 +31,14 @@ describe Takeaway do
   end
 
   it "takes orders" do
+    allow(dial_a_drink).to receive(:take_order).with(order).and_return("Thank you! Your order was placed and will be delivered before 01:00AM")
     Timecop.freeze(Time.local(2014))
     expect(dial_a_drink.take_order(order)).to eq("Thank you! Your order was placed and will be delivered before 01:00AM") 
+  end
+
+  it "sends a text message when an order is placed" do
+    allow(dial_a_drink).to receive(:send_message).with("Order").and_return("Message sent")
+    expect(dial_a_drink.send_message("Order")).to eq ("Message sent")
   end
 end
 
