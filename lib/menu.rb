@@ -14,4 +14,6 @@ class Menu
   def display
     items.map { |item| "#{item.name}: £#{item.price}0" }
   end
+
+
 end
