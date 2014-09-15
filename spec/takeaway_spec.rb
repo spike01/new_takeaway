@@ -27,7 +27,7 @@ describe Takeaway do
   end
 
   it "raises an error if the totals are incorrect" do
-    expect{dial_a_drink.take_order(bad_order)}.to raise_error(RuntimeError) 
+    expect{dial_a_drink.take_order(bad_order)}.to raise_error("Totals do not match - bad order") 
   end
 
   it "takes orders" do
